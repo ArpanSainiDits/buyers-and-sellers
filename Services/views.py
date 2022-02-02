@@ -8,7 +8,7 @@ from flask import abort, jsonify, make_response
 from db import db
 from passlib.apps import custom_app_context as pwd_context
 
-from schema import LandSchema
+from schema import LandSchema, BuddingSchema
 
 
 #buyer register view
@@ -133,3 +133,19 @@ class BuyerBuddingView(Resource):
         db.session.add(property)
         db.session.commit()
         return jsonify({"status": "successfully registered"})
+
+
+#highest bid
+class HighestBidView(Resource):
+    def get(self):
+        bid = BuyerBudding.query.all()
+        buddingSchema = BuddingSchema(many=True)
+        buddingList = buddingSchema.dump(bid)
+        for i in buddingList:
+            a = (i['bid'])
+            # a.sort()
+            print(a)
+        return jsonify({"Bid list" : buddingList})
+    
+    
+    

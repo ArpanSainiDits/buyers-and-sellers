@@ -1,6 +1,6 @@
 from flask_restful import Api
 
-from Services.views import buyerRegister, buyerLogin, sellerRegister, sellerLogin, lendInformation, PropertyQuoteView, SellerInfoView, LandListView, BuyerBuddingView
+from Services.views import buyerRegister, buyerLogin, sellerRegister, sellerLogin, lendInformation, PropertyQuoteView, SellerInfoView, LandListView, BuyerBuddingView, HighestBidView
 
 
 def view_routes(app):
@@ -13,5 +13,6 @@ def view_routes(app):
     api.add_resource(PropertyQuoteView, '/api/propertyQuote'),
     api.add_resource(SellerInfoView, '/api/sellerInformation'),
     api.add_resource(LandListView, '/api/LandListView'),
-    api.add_resource(BuyerBuddingView, '/api/BuyerBuddingView')
+    api.add_resource(BuyerBuddingView, '/api/BuyerBuddingView'),
+    api.add_resource(HighestBidView, '/api/HighestBidView')
 
