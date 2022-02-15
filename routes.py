@@ -1,7 +1,7 @@
 from flask_restful import Api
 
-from Services.views import buyerRegister, buyerLogin, sellerRegister, sellerLogin, lendInformation, PropertyQuoteView, SellerInfoView, LandListView, BuyerBuddingView, HighestBidView
-
+from Services.seller.seller import sellerRegister, sellerLogin, lendInformation, PropertyQuoteView, SellerInfoView, LandListView, HighestBidView
+from Services.buyers.buyer import buyerRegister, buyerLogin, BuyerBuddingView
 
 def view_routes(app):
     api = Api(app)
