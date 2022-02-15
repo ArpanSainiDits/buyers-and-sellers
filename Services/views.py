@@ -95,7 +95,7 @@ class lendInformation(Resource):
 class PropertyQuoteView(Resource):
     def post(self):
         property_id = request.json['property_id']
-        quote = request.json['quote']
+        quote = 100000
 
         property = PropertyQuote(property_id=property_id, quote=quote)
         db.session.add(property)
